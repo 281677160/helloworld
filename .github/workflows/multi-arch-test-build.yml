@@ -47,6 +47,7 @@ jobs:
           cp -Rf $GITHUB_WORKSPACE/shangyou/* ./
         else
           cd repogx
+          find . -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         fi
         git add .
         git commit -m "Update"
