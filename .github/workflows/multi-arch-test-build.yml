@@ -40,7 +40,7 @@ jobs:
         done
         find ./shangyou -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         git clone https://github.com/${{github.repository}}.git repogx
-        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-pl"` -eq '1' ]]; then
+        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-pl2"` -eq '1' ]]; then
           cd repogx
           rm -Rf *
           git rm --cache *
