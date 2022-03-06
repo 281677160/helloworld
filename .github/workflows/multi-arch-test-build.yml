@@ -35,12 +35,12 @@ jobs:
       if: env.REPO_TOKEN
       run: |
         git clone https://github.com/fw876/helloworld.git shangyou
-        for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2" "kcptun"; do \
+        for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
         svn checkout "https://github.com/immortalwrt/packages/trunk/net/$i" "shangyou/$i"; \
         done
         find ./shangyou -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         git clone https://github.com/${{github.repository}}.git repogx
-        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-pl2"` -eq '1' ]]; then
+        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-plus"` -eq '1' ]]; then
           cd repogx
           rm -Rf *
           git rm --cache *
@@ -48,7 +48,6 @@ jobs:
         else
           cd repogx
           find . -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
-          echo "上游仓库没发现luci-app-ssr-plus存在，所以不同步"
         fi
         git add .
         git commit -m "Update"
