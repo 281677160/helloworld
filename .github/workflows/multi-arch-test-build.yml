@@ -41,7 +41,7 @@ jobs:
         cd shangyou
         find . -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         cd ../
-        git clone -b main https://github.com/${{github.repository}}.git repogx
+        git clone https://github.com/${{github.repository}}.git repogx
         if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-plus"` -eq '1' ]]; then
           cd repogx
           rm -Rf *
@@ -52,7 +52,7 @@ jobs:
         fi
         git add .
         git commit -m "Update"
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:master
         
     - name: Delete workflow runs
       if: env.REPO_TOKEN
