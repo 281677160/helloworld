@@ -40,7 +40,7 @@ jobs:
         done
         find ./shangyou -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         git clone https://github.com/${{github.repository}}.git repogx
-        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-plus"` -eq '1' ]]; then
+        if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-pl"` -eq '1' ]]; then
           cd repogx
           rm -Rf *
           git rm --cache *
@@ -48,6 +48,7 @@ jobs:
         else
           cd repogx
           find . -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
+          echo "上游仓库没发现luci-app-ssr-plus存在，所以不同步"
         fi
         git add .
         git commit -m "Update"
