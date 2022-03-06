@@ -52,7 +52,7 @@ jobs:
         fi
         git add .
         git commit -m "Update"
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:master
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
         
     - name: Delete workflow runs
       if: env.REPO_TOKEN
