@@ -38,9 +38,7 @@ jobs:
         for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2" "kcptun"; do \
         svn checkout "https://github.com/immortalwrt/packages/trunk/net/$i" "shangyou/$i"; \
         done
-        cd shangyou
-        find . -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
-        cd ../
+        find ./shangyou -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
         git clone https://github.com/${{github.repository}}.git repogx
         if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-plus"` -eq '1' ]]; then
           cd repogx
