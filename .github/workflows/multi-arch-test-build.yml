@@ -34,9 +34,9 @@ jobs:
       continue-on-error: true
       if: env.REPO_TOKEN
       run: |
-        git clone https://github.com/fw876/helloworld.git shangyou
+        rm -rf shangyou && git clone https://github.com/fw876/helloworld.git shangyou
         find ./shangyou -name '*.git' -o -name '*.svn' | xargs -i rm -rf {}
-        git clone https://github.com/${{github.repository}}.git repogx
+        rm -rf repogx && git clone https://github.com/${{github.repository}}.git repogx
         if [[ `ls $GITHUB_WORKSPACE/shangyou | grep -c "luci-app-ssr-plus"` -eq '1' ]]; then
           cd repogx
           rm -Rf *
