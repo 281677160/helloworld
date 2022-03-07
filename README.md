@@ -1,1 +1,1 @@
-README.md
+luci-app-ssr-plus
