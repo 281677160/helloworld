@@ -457,6 +457,18 @@ msgstr "使用 DNS2SOCKS 查询并缓存"
 msgid "DNS Server IP:Port"
 msgstr "DNS 服务器 IP:Port"
 
+msgid "Domestic DNS Server"
+msgstr "国内 DNS 服务器"
+
+msgid "Use DNS from WAN"
+msgstr "使用 WAN 下发的 DNS"
+
+msgid "Use DNS from WAN and 114DNS"
+msgstr "使用 WAN 下发的 DNS 和 114DNS"
+
+msgid "Custom DNS Server format as IP:PORT (default: disabled)"
+msgstr "格式为 IP:PORT（默认：禁用）"
+
 msgid "Update time (every day)"
 msgstr "更新时间（每天）"
 
@@ -544,10 +556,10 @@ msgstr "服务器节点故障自动切换/广告屏蔽/中国大陆 IP 段数据
 msgid "Support AdGuardHome and DNSMASQ format list"
 msgstr "同时支持 AdGuard Home 和 DNSMASQ 格式的过滤列表"
 
-msgid "Delete All Subscribe Severs"
+msgid "Delete All Subscribe Servers"
 msgstr "删除所有订阅服务器节点"
 
-msgid "Severs Nodes"
+msgid "Servers Nodes"
 msgstr "服务器节点"
 
 msgid "Use Local DNS Service listen port 5335"
@@ -619,7 +631,7 @@ msgstr "更新订阅 URL 列表"
 msgid "Update subscribe url list first"
 msgstr "修改订阅 URL 和节点关键字后，请先点击更新"
 
-msgid "Update All Subscribe Severs"
+msgid "Update All Subscribe Servers"
 msgstr "更新所有订阅服务器节点"
 
 msgid "Plugin"
